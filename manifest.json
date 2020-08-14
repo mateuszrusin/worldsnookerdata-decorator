@@ -1,6 +1,6 @@
 {
   "name": "WorldSnookerData Decorator",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "manifest_version": 2,
   "description": "Add stats to snooker scores on worldsnookerdata.com",
   "homepage_url": "http://livescores.worldsnookerdata.com/",
@@ -18,13 +18,13 @@
      "js": [
         "js/jquery.js",
         "js/chart.js",
+        "js/moment.js",
         "js/inject.js"
      ]
     }
   ],
   "permissions": [
      "http://livescores.worldsnookerdata.com/*",
-     "https://livescores.worldsnookerdata.com/*",
-     "activeTab"
+     "https://livescores.worldsnookerdata.com/*"
   ]
 }
