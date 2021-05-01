@@ -1,6 +1,6 @@
 {
   "name": "WorldSnookerData Decorator",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "manifest_version": 2,
   "description": "Add stats to snooker scores on worldsnookerdata.com",
   "homepage_url": "http://livescores.worldsnookerdata.com/",

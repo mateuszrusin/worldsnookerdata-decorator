@@ -85,6 +85,20 @@ $("table.matches-round tbody tr").each(function() {
 	}
 });
 
+$("div.live-match table").each(function() {
+	var table = $(this);
+	var tr = table.find('tr.details:last').clone();
+	var href = document.location.href
+		.replace("LiveScoring/Match", "Matches/Result");
+	var link = $(document.createElement("a"))
+		.attr("href", href)
+		.css('color', '#ce132d')
+		.text('STATS');
+
+	tr.find('td').html(link);
+	tr.insertAfter(table.find('tr:last'));
+});
+
 $("#label-timer").each(function() {
 
 	var second = 1000;
@@ -190,7 +204,10 @@ $(window).on('load', function() {
 							beginAtZero: true,
 							min: Math.min(...ticks),
 							max: Math.max(...ticks),
-							stepSize: 1
+							stepSize: 1,
+							callback: function(value, index, values) {
+								return Math.abs(value);
+							}
 						},
 						gridLines: {
 							zeroLineWidth: 3
@@ -236,7 +253,10 @@ $(window).on('load', function() {
 							beginAtZero: true,
 							min: -1,
 							max: 1,
-							stepSize: 0.5
+							stepSize: 0.25,
+							callback: function(value, index, values) {
+								return Math.abs(value) * 100 + '%';
+							}
 						},
 						gridLines: {
 							zeroLineWidth: 1
